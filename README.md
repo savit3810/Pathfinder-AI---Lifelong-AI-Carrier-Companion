@@ -15,7 +15,7 @@
 **India's most comprehensive AI-powered student lifecycle and career guidance platform.**  
 From Class 10 → Graduation → Dream Job — powered by ML, gamification, and real-time career intelligence.
 
-[🌐 Live Demo](#) · [📖 Docs](#) · [🐛 Report Bug](https://github.com/savit3810/Pathfinder-AI---Lifelong-AI-Carrier-Companion/issues) · [✨ Request Feature](https://github.com/savit3810/Pathfinder-AI---Lifelong-AI-Carrier-Companion/issues)
+[🌐 Live Demo](https://pathfinder-ai-beb6d1d0-main.vercel.app/) · [📖 Docs](#) · [🐛 Report Bug](https://github.com/savit3810/Pathfinder-AI---Lifelong-AI-Carrier-Companion/issues) · [✨ Request Feature](https://github.com/savit3810/Pathfinder-AI---Lifelong-AI-Carrier-Companion/issues)
 
 </div>
 
