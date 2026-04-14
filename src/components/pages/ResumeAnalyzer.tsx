@@ -5,9 +5,9 @@ import { Button } from '@/components/ui/button';
 import { useAppStore } from '@/lib/store';
 import { RadarChart, Radar, PolarGrid, PolarAngleAxis, ResponsiveContainer } from 'recharts';
 
-// ── Mock analysis engine: varies by file "name" seed ────────────────────────
-function generateAnalysis(fileName: string) {
-  const seed = fileName.length % 3;
+// ── Mock analysis engine: varies dynamically ────────────────────────
+function generateAnalysis() {
+  const seed = Math.floor(Math.random() * 3);
   const variations = [
     {
       score: 72,
@@ -103,18 +103,18 @@ export default function ResumeAnalyzer() {
   const [dragging, setDragging] = useState(false);
   const [fileName, setFileName] = useState('resume.pdf');
   const [analyzing, setAnalyzing] = useState(false);
+  const [analysis, setAnalysis] = useState<any>(null);
   const fileRef = useRef<HTMLInputElement>(null);
   const updateUser = useAppStore((s) => s.updateUser);
   const updateXP = useAppStore((s) => s.updateXP);
 
-  const analysis = generateAnalysis(fileName);
-
   const handleAnalyze = (name = fileName) => {
     setAnalyzing(true);
     setTimeout(() => {
+      const a = generateAnalysis();
+      setAnalysis(a);
       setAnalyzed(true);
       setAnalyzing(false);
-      const a = generateAnalysis(name);
       updateUser({ skills: a.skills, resumeScore: a.score });
       updateXP(50);
     }, 1800);
@@ -202,10 +202,10 @@ export default function ResumeAnalyzer() {
           </p>
         </div>
         <div className="flex gap-2">
-          <Button onClick={() => setAnalyzed(false)} variant="outline" className="border-border text-foreground">
+          <Button onClick={() => setAnalyzed(false)} variant="outline" className="border-border text-foreground print:hidden">
             <RefreshCw className="w-4 h-4 mr-2" /> Re-analyze
           </Button>
-          <Button className="bg-gradient-primary text-primary-foreground hover:opacity-90">
+          <Button onClick={() => window.print()} className="bg-gradient-primary text-primary-foreground hover:opacity-90 print:hidden">
             <Download className="w-4 h-4 mr-2" /> Export Report
           </Button>
         </div>

@@ -19,11 +19,24 @@ from typing import List, Optional
 import pickle, json, os, math
 import numpy as np
 import pandas as pd
-from db import save_prediction, get_user_history
+from api.db import save_prediction, get_user_history
 from uuid import uuid4
 
 # ─── App ──────────────────────────────────────────────────────────────────────
 app = FastAPI(title="PathFinder AI — ML Backend", version="2.0.0")
+
+class VercelPrefixMiddleware:
+    def __init__(self, app):
+        self.app = app
+    async def __call__(self, scope, receive, send):
+        if scope["type"] == "http":
+            if scope["path"].startswith("/api"):
+                scope["path"] = scope["path"][4:]
+                if not scope["path"]:
+                    scope["path"] = "/"
+        await self.app(scope, receive, send)
+
+app.add_middleware(VercelPrefixMiddleware)
 
 app.add_middleware(
     CORSMiddleware,
