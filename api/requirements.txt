@@ -1,0 +1,9 @@
+fastapi
+uvicorn[standard]
+scikit-learn==1.5.*
+pandas
+numpy
+pydantic
+motor
+pymongo
+python-multipart

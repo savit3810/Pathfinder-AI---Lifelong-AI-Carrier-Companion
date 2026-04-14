@@ -1,0 +1,97 @@
+{
+  "class10_stream": {
+    "model": "Random Forest Classifier",
+    "accuracy_pct": 93.83,
+    "classes": [
+      "Arts",
+      "Commerce",
+      "Science"
+    ],
+    "n_estimators": 200,
+    "features": [
+      "math_marks",
+      "science_marks",
+      "english_marks",
+      "social_marks",
+      "hindi_marks",
+      "overall_percentage",
+      "tech_interest",
+      "commerce_interest",
+      "art_interest"
+    ]
+  },
+  "class12_course": {
+    "model": "Random Forest Classifier",
+    "accuracy_pct": 97.83,
+    "classes": [
+      "B.Com",
+      "B.Sc Computer Science",
+      "B.Sc General Science",
+      "BA / Mass Communication",
+      "BA History / UPSC",
+      "BBA / MBA",
+      "CA / CMA",
+      "Engineering",
+      "Medical (MBBS)"
+    ],
+    "n_estimators": 200,
+    "features": [
+      "stream_enc",
+      "marks_subject1",
+      "marks_subject2",
+      "marks_subject3",
+      "math_marks",
+      "physics_marks",
+      "bio_marks",
+      "overall_percentage",
+      "pref_enc",
+      "skills_count"
+    ]
+  },
+  "college_domain": {
+    "model_dt": "Decision Tree Classifier",
+    "model_lr": "Logistic Regression",
+    "dt_accuracy_pct": 92.17,
+    "lr_accuracy_pct": 44.5,
+    "classes": [
+      "AI/ML Engineering",
+      "Business Analytics",
+      "Cloud Architecture",
+      "Data Science",
+      "DevOps",
+      "Digital Marketing",
+      "Finance",
+      "Full Stack Development",
+      "Healthcare IT",
+      "Software Engineering"
+    ],
+    "features": [
+      "degree_enc",
+      "cgpa",
+      "skills_count",
+      "projects_count",
+      "internships_count",
+      "certifications",
+      "active_backlogs"
+    ]
+  },
+  "salary": {
+    "linear_regression": {
+      "mae_lpa": 0.842,
+      "r2": 0.7317
+    },
+    "random_forest_regressor": {
+      "mae_lpa": 0.744,
+      "r2": 0.779
+    },
+    "features": [
+      "degree_enc",
+      "cgpa",
+      "skills_count",
+      "projects_count",
+      "internships_count",
+      "certifications",
+      "active_backlogs"
+    ]
+  }
+}

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PathFinder AI – Lifelong Career Companion</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="app-container glass-panel">
+        <header class="header">
+            <div class="logo">
+                <span class="icon">🚀</span>
+                <h1>PathFinder <span class="accent">AI</span></h1>
+            </div>
+            <p class="subtitle">Lifelong Career Intelligence Platform</p>
+        </header>
+
+        <main class="main-content">
+            <!-- Stage Selection -->
+            <section id="stage-selection" class="card">
+                <h2>Select Your Current Stage</h2>
+                <div class="stage-buttons">
+                    <button class="btn-stage" data-stage="class10">Class 10</button>
+                    <button class="btn-stage" data-stage="class12">Class 12</button>
+                    <button class="btn-stage" data-stage="college">College / Undergrad</button>
+                </div>
+            </section>
+
+            <!-- Dynamic Input Forms -->
+            <section id="input-forms" class="card hidden">
+                <h2 id="form-title">Enter Your Details</h2>
+                
+                <!-- Class 10 Form -->
+                <form id="form-class10" class="input-form hidden">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>Math Marks (%)</label>
+                            <input type="number" name="math_marks" required min="0" max="100">
+                        </div>
+                        <div class="form-group">
+                            <label>Science Marks (%)</label>
+                            <input type="number" name="science_marks" required min="0" max="100">
+                        </div>
+                        <div class="form-group">
+                            <label>English Marks (%)</label>
+                            <input type="number" name="english_marks" required min="0" max="100">
+                        </div>
+                        <div class="form-group">
+                            <label>Technology Interest (0-10)</label>
+                            <input type="number" name="tech_interest" required min="0" max="10">
+                        </div>
+                        <div class="form-group">
+                            <label>Commerce Interest (0-10)</label>
+                            <input type="number" name="commerce_interest" required min="0" max="10">
+                        </div>
+                        <div class="form-group">
+                            <label>Arts/Humanities Interest (0-10)</label>
+                            <input type="number" name="art_interest" required min="0" max="10">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn-primary">Generate My Path ➔</button>
+                </form>
+
+                <!-- Class 12 Form -->
+                <form id="form-class12" class="input-form hidden">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>Current Stream</label>
+                            <select name="stream">
+                                <option value="Science">Science</option>
+                                <option value="Commerce">Commerce</option>
+                                <option value="Arts">Arts</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Overall Percentage (%)</label>
+                            <input type="number" name="overall_score" required min="0" max="100">
+                        </div>
+                        <div class="form-group">
+                            <label>Main Subject 1 Marks</label>
+                            <input type="number" name="marks_subject1" required min="0" max="100">
+                        </div>
+                        <div class="form-group">
+                            <label>Main Subject 2 Marks</label>
+                            <input type="number" name="marks_subject2" required min="0" max="100">
+                        </div>
+                        <div class="form-group">
+                            <label>Main Subject 3 Marks</label>
+                            <input type="number" name="marks_subject3" required min="0" max="100">
+                        </div>
+                        <div class="form-group">
+                            <label>Preferred Future Subject</label>
+                            <select name="preferred_subject">
+                                <option value="Mathematics">Mathematics</option>
+                                <option value="Biology">Biology</option>
+                                <option value="Computer Science">Computer Science</option>
+                                <option value="Economics">Economics</option>
+                                <option value="Business Studies">Business Studies</option>
+                                <option value="History">History</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Skills Learned So Far (Count)</label>
+                            <input type="number" name="skills_count" required min="0" max="20" value="2">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn-primary">Generate My Path ➔</button>
+                </form>
+
+                <!-- College Form -->
+                <form id="form-college" class="input-form hidden">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>Degree / Major</label>
+                            <select name="degree">
+                                <option value="B.Tech / B.E.">B.Tech / B.E.</option>
+                                <option value="BCA">BCA</option>
+                                <option value="B.Sc CS">B.Sc CS</option>
+                                <option value="B.Com">B.Com</option>
+                                <option value="MBA">MBA</option>
+                                <option value="BA">BA</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Current CGPA (out of 10)</label>
+                            <input type="number" step="0.1" name="cgpa" required min="0" max="10">
+                        </div>
+                        <div class="form-group">
+                            <label>Skills Count</label>
+                            <input type="number" name="skills_count" required min="0" max="20">
+                        </div>
+                        <div class="form-group">
+                            <label>Projects Completed</label>
+                            <input type="number" name="projects_count" required min="0" max="20">
+                        </div>
+                        <div class="form-group">
+                            <label>Internships Completed</label>
+                            <input type="number" name="internships_count" required min="0" max="10">
+                        </div>
+                        <div class="form-group">
+                            <label>Active Backlogs</label>
+                            <input type="number" name="active_backlogs" required min="0" max="20" value="0">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn-primary">Predict Career & Salary ➔</button>
+                </form>
+            </section>
+
+            <!-- Loading Spinner -->
+            <div id="loader" class="hidden">
+                <div class="spinner"></div>
+                <p>AI is analyzing your profile...</p>
+            </div>
+
+            <!-- Dashboard Results Area -->
+            <div id="results-dashboard" class="hidden">
+                
+                <!-- Main Prediction -->
+                <section class="result-section highlight-box">
+                    <h2 class="sparkle">🎯 AI Recommendation</h2>
+                    <div class="prediction-content">
+                        <!-- Filled via JS -->
+                        <div class="main-pred-text" id="main-prediction-title"></div>
+                        <div class="confidence-meter">
+                            <div class="meter-bar" id="confidence-bar"></div>
+                            <span id="confidence-text"></span>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="dashboard-grid">
+                    <!-- Position Analysis -->
+                    <section class="result-section panel">
+                        <h3>📊 Your Position & Percentile</h3>
+                        <div class="stats-grid">
+                            <div class="stat-card">
+                                <div class="stat-value" id="acad-percentile"></div>
+                                <div class="stat-label">Academic Pctile</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-value" id="skill-percentile"></div>
+                                <div class="stat-label">Skill Pctile</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-value" id="readiness-score"></div>
+                                <div class="stat-label">Readiness Score</div>
+                            </div>
+                        </div>
+                        <div class="rank-message" id="ranking-message"></div>
+                    </section>
+
+                    <!-- Motivation / Senior Match -->
+                    <section class="result-section panel">
+                        <h3>🌟 Senior Success Matches</h3>
+                        <p class="subtitle" id="motivation-note"></p>
+                        <div class="seniors-list" id="seniors-list">
+                            <!-- JS fills alumni matches -->
+                        </div>
+                    </section>
+                </div>
+
+                <div class="dashboard-grid">
+                    <!-- Chart area -->
+                    <section class="result-section panel">
+                        <h3>📈 Career Model Analysis</h3>
+                        <div class="chart-container">
+                            <canvas id="analysisChart"></canvas>
+                        </div>
+                    </section>
+
+                    <!-- Lifecycle Tracker -->
+                    <section class="result-section panel">
+                        <h3>🔄 Your Lifecycle Roadmap</h3>
+                        <div class="timeline" id="lifecycle-timeline">
+                            <!-- JS fills timeline -->
+                        </div>
+                    </section>
+                </div>
+
+            </div>
+
+        </main>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
