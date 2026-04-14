@@ -1,103 +1,251 @@
-# 🚀 Pathfinder AI: Lifelong AI Career Companion
+# 🚀 PathFinder AI — Lifelong AI Career Companion
 
-Pathfinder AI is a state-of-the-art student lifecycle and career guidance platform designed to empower students through data-driven insights. By leveraging advanced machine learning models and intuitive visualizations, Pathfinder AI helps students navigate their educational journey and career transitions with confidence.
+<div align="center">
 
-![Pathfinder AI Banner](https://images.unsplash.com/photo-1454165833767-027ffea10c4d?q=80&w=2070&auto=format&fit=crop)
+![PathFinder AI](https://img.shields.io/badge/PathFinder_AI-v2.0-emerald?style=for-the-badge&logo=sparkles&logoColor=white)
+![React](https://img.shields.io/badge/React_18-61DAFB?style=for-the-badge&logo=react&logoColor=black)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?style=for-the-badge&logo=scikitlearn&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)
 
-## ✨ key Features
+**India's most comprehensive AI-powered student lifecycle and career guidance platform.**  
+From Class 10 → Graduation → Dream Job — powered by ML, gamification, and real-time career intelligence.
 
-- **🤖 Predictive ML Pipeline**: 
-  - **Salary Prediction**: Estimate future earning potential based on skill sets and academic performance.
-  - **Success Prediction**: analyze the likelihood of success in different academic and professional domains.
-- **📊 Interactive Dashboards**: 
-  - **Student View**: Track progress, growth journey, and motivation levels.
-  - **Parent/Senior View**: Monitor and mentor students through data-backed recommendations.
-  - **Admin Dashboard**: Comprehensive overview of student performance and system health.
-- **🤝 Senior Matching System**: Connect students with appropriate mentors and seniors based on domain alignment and expertise.
-- **💬 AI Chatbot**: Real-time career guidance and query resolution powered by natural language processing.
-- **📈 Advanced Visualizations**: Dynamic charts (using Recharts and Chart.js) to visualize student growth and predictive outcomes.
+[🌐 Live Demo](#) · [📖 Docs](#) · [🐛 Report Bug](https://github.com/savit3810/Pathfinder-AI---Lifelong-AI-Carrier-Companion/issues) · [✨ Request Feature](https://github.com/savit3810/Pathfinder-AI---Lifelong-AI-Carrier-Companion/issues)
+
+</div>
+
+---
+
+## 📸 Screenshots
+
+> Full-featured dark-mode dashboard with glassmorphism effects, animated charts, and real-time ML predictions.
+
+| Student Dashboard | Resume Analyzer | Interview Simulator |
+|:-:|:-:|:-:|
+| XP + Skill Radar | ATS Score + Radar | Category Select + Timer |
+
+---
+
+## ✨ Key Features
+
+### 🤖 AI & ML Intelligence
+- **Salary Prediction** — ML model estimates earning potential based on skill set, role & experience
+- **Career Success Predictor** — Scikit-learn pipeline for probability of academic/professional success
+- **Stream Recommender** — For Class 10 students: Science/Commerce/Arts recommendation engine
+- **AI Career Mentor Chatbot** — Role-aware conversational guidance on exams, jobs, salaries & skills
+
+### 📊 Dashboards for Everyone
+| Role | Access |
+|---|---|
+| 🎒 Class 10 Student | Stream selector, career explorer, AI chatbot, quiz |
+| 📚 Class 11-12 Student | Entrance exam roadmap, career DNA quiz, ML predictions |
+| 🎓 College Student | Resume analyzer, skill heatmap, interview sim, roadmap |
+| 💼 Graduate / Job Seeker | Mock interviews, job readiness tracker, career simulation |
+| 👨‍👩‍👧 Parent | Real-time child progress monitoring, AI insights, alerts |
+| 🛡️ Admin | Full user management, speaker & conference management |
+
+### 🏆 Gamification System
+- **XP Points** — Earned for every action: quiz, chatbot, resume analysis
+- **Level System** — Beginner → Explorer → Achiever → Champion → Legend
+- **Badges & Achievements** — 12+ unlockable badges tracking real user progress
+- **Monthly Challenges** — Dynamic goals refreshed each month
+- **Leaderboard** — Compete with other students in your cohort
+
+### 📄 Career Tools
+- **Resume Analyzer** — ATS score, keyword audit, skill gap detection, radar chart visualization
+- **Interview Simulator** — 4 categories (Behavioral/Technical/HR/System Design), countdown timer, STAR scoring
+- **Career DNA Quiz** — Personality + aptitude assessment mapping to career paths
+- **Skill Analysis** — Skill heatmap with benchmarks against industry requirements
+- **Career Simulation** — 5-year financial projection for different career paths
+- **Smart Roadmap Builder** — Milestone-based plans with deadline tracking
+
+### 👨‍👩‍👧 Parent Portal
+- Real-time child activity monitoring via unique invite codes
+- AI-generated alerts, strengths, weaknesses & suggestions
+- Career recommendation engine for parents
+- Weekly progress charts and milestone tracking
+
+### 🎓 Community Features
+- **Speaker Sessions** — Book and manage sessions with industry experts
+- **Conference Hub** — Virtual and in-person career conference calendar
+- **AI Mentor** — 24/7 conversational guide with role-specific answers
+
+---
 
 ## 🛠️ Tech Stack
 
 ### Frontend
-- **Framework**: [React 18](https://reactjs.org/) with [Vite](https://vitejs.dev/)
-- **Styling**: [Tailwind CSS](https://tailwindcss.com/) & [Shadcn UI](https://ui.shadcn.com/)
-- **Animations**: [Framer Motion](https://www.framer.com/motion/)
-- **Visuals**: [Lucide Icons](https://lucide.dev/) & [Recharts](https://recharts.org/)
-- **State Management**: [Zustand](https://github.com/pmndrs/zustand)
-- **Data Fetching**: [TanStack Query (React Query)](https://tanstack.com/query/latest)
+| Technology | Purpose |
+|---|---|
+| React 18 + TypeScript | Core framework |
+| Vite | Build tool & dev server |
+| Tailwind CSS + Shadcn UI | Styling & component library |
+| Framer Motion | Animations & page transitions |
+| Zustand | Global state management |
+| Recharts | Interactive data visualizations |
+| React Markdown | Chatbot message rendering |
+| Lucide Icons | Icon system |
 
 ### Backend
-- **Framework**: [FastAPI](https://fastapi.tiangolo.com/) (Python)
-- **Database**: [MongoDB](https://www.mongodb.com/) with [Motor](https://motor.readthedocs.io/) (Async driver)
-- **Machine Learning**: [Scikit-learn](https://scikit-learn.org/), [Pandas](https://pandas.pydata.org/), [NumPy](https://numpy.org/)
-- **Server**: [Uvicorn](https://www.uvicorn.org/)
+| Technology | Purpose |
+|---|---|
+| FastAPI (Python) | REST API framework |
+| MongoDB + Motor | Async database |
+| Scikit-learn | ML model training & inference |
+| Pandas + NumPy | Data processing |
+| Uvicorn | ASGI server |
+
+---
 
 ## 🚀 Getting Started
 
 ### Prerequisites
-- Node.js (v18+)
-- Python (v3.9+)
-- MongoDB instance
+- Node.js v18+
+- Python 3.9+
+- MongoDB instance (local or Atlas)
+- npm or bun
 
-### Installation
+### 1️⃣ Clone the Repository
+```bash
+git clone https://github.com/savit3810/Pathfinder-AI---Lifelong-AI-Carrier-Companion.git
+cd Pathfinder-AI---Lifelong-AI-Carrier-Companion
+```
 
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/savit3810/Pathfinder-AI---Lifelong-AI-Carrier-Companion.git
-   cd Pathfinder-AI---Lifelong-AI-Carrier-Companion
-   ```
+### 2️⃣ Frontend Setup
+```bash
+npm install
+npm run dev
+# App runs on http://localhost:5173
+```
 
-2. **Frontend Setup**:
-   ```bash
-   npm install
-   ```
+### 3️⃣ Backend Setup
+```bash
+cd api
+python -m venv venv
 
-3. **Backend Setup**:
-   ```bash
-   cd api
-   python -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
-   pip install -r requirements.txt
-   ```
+# Windows
+venv\Scripts\activate
 
-### Running the Application
+# macOS/Linux
+source venv/bin/activate
 
-1. **Start Backend**:
-   ```bash
-   cd api
-   uvicorn index:app --reload
-   ```
+pip install -r requirements.txt
+uvicorn index:app --reload
+# API runs on http://localhost:8000
+```
 
-2. **Start Frontend**:
-   ```bash
-   npm run dev
-   ```
+### 4️⃣ Demo Login Credentials
+| Role | Email | Password |
+|---|---|---|
+| 🛡️ Admin | savit.m.singh@slrtce.in | Savit@2006 |
+| 🎓 Student | Register via Sign Up | Your choice |
+| 👨‍👩‍👧 Parent | Register + child invite code | Your choice |
+
+---
 
 ## 📂 Project Structure
 
-```text
-├── api/                # FastAPI Backend
-│   ├── models/         # ML Pickled Models
-│   ├── data/           # Training Datasets
-│   ├── index.py        # Main API Entry Point
-│   └── train_models.py # ML Pipeline Scripts
-├── src/                # Frontend Source
-│   ├── components/     # UI & Page Components
-│   ├── hooks/          # Custom Hooks
-│   ├── pages/          # Application Views
-│   └── lib/            # Utilities & Store
-├── public/             # Static Assets
-└── index.html          # Frontend Entry
 ```
+pathfinder-ai/
+├── api/                        # FastAPI Backend
+│   ├── models/                 # Pickled ML models (.pkl)
+│   ├── data/                   # Training datasets
+│   ├── index.py               # Main API entry (700+ lines)
+│   ├── train_models.py        # ML pipeline training scripts
+│   └── requirements.txt
+│
+├── src/                        # React Frontend
+│   ├── components/
+│   │   ├── pages/             # 17+ page components
+│   │   │   ├── HomePage.tsx          # Dashboard home with charts
+│   │   │   ├── ChatbotPage.tsx       # AI Mentor chatbot
+│   │   │   ├── ResumeAnalyzer.tsx    # ATS analyzer + radar chart
+│   │   │   ├── InterviewSim.tsx      # 4-category Interview simulator
+│   │   │   ├── AchievementsPage.tsx  # Leaderboard + badges
+│   │   │   ├── MLIntelligence.tsx    # ML predictions dashboard
+│   │   │   ├── AdminDashboard.tsx    # Full admin control panel
+│   │   │   ├── ParentDashboard.tsx   # Child monitoring portal
+│   │   │   ├── CareerSimulation.tsx  # 5-year financial projections
+│   │   │   └── ...
+│   │   ├── AuthScreen.tsx     # Multi-step auth with role selection
+│   │   ├── DashboardLayout.tsx # Collapsible sidebar navigation
+│   │   └── Landing.tsx        # Animated landing page
+│   ├── lib/
+│   │   ├── store.ts           # Zustand global state
+│   │   └── careerData.ts      # Career paths, exam data
+│   └── index.css              # Design system + animations
+│
+├── public/                    # Static assets
+├── vercel.json               # Deployment config
+└── index.html                # Entry point
+```
+
+---
+
+## 🎮 Gamification System
+
+```
+XP Thresholds:
+  0      → 500   XP  = 🟠 Beginner
+  500    → 1500  XP  = 🔵 Explorer
+  1500   → 3500  XP  = 🟢 Achiever
+  3500   → 7000  XP  = 🟡 Champion
+  7000+        XP  = 🟣 Legend
+```
+
+| Action | XP Reward |
+|---|---|
+| Account created | +10 XP |
+| Resume analyzed | +50 XP |
+| Interview completed | +75 XP |
+| Career DNA quiz | +50 XP |
+| Monthly challenge | +50–200 XP |
+
+---
+
+## 🏆 Built for Hackathons
+
+PathFinder AI was designed with **national-level hackathon winning criteria** in mind:
+
+- ✅ **Real-world problem** — Career guidance crisis for 250M+ Indian students
+- ✅ **Novel AI/ML integration** — Custom trained salary & success prediction models
+- ✅ **Complete product** — Auth, dashboards, analytics, gamification, admin portal
+- ✅ **Multi-stakeholder** — Student, parent, admin all served from one platform
+- ✅ **Production-ready** — Vercel-deployed frontend, FastAPI backend, environment configs
+
+---
 
 ## 🤝 Contributing
 
-We welcome contributions! Please feel free to submit Pull Requests or open Issues to help improve Pathfinder AI.
+Contributions, issues and feature requests are welcome!  
+See our [Contributing Guide](CONTRIBUTING.md) for details.
+
+```bash
+# Fork → Create branch → Commit → Push → Pull Request
+git checkout -b feature/amazing-feature
+git commit -m 'feat: add amazing feature'
+git push origin feature/amazing-feature
+```
+
+---
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+Distributed under the **MIT License**. See `LICENSE` for more information.
 
 ---
-*Built for excellence.* 🌟
+
+<div align="center">
+
+**Built with ❤️ for India's Students**
+
+*PathFinder AI — Your career, your journey.* 🌟
+
+⭐ Star this repo if PathFinder AI helped you find your path!
+
+</div>

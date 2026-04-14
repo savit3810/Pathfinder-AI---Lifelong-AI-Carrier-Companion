@@ -3,6 +3,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 @layer base {
   :root {
     --background: 220 20% 4%;
@@ -103,18 +104,139 @@
     background: hsl(var(--card) / 0.85);
     border: 1px solid hsl(var(--border) / 0.3);
   }
+
+  /* Shimmer loading skeleton */
+  .shimmer {
+    background: linear-gradient(
+      90deg,
+      hsl(220, 16%, 14%) 0%,
+      hsl(220, 16%, 20%) 50%,
+      hsl(220, 16%, 14%) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+  }
+
+  /* Floating animation for hero elements */
+  .float-slow {
+    animation: float 6s ease-in-out infinite;
+  }
+  .float-fast {
+    animation: float 4s ease-in-out infinite 1s;
+  }
 }
 
-/* Scrollbar */
-::-webkit-scrollbar { width: 6px; }
+/* ── Keyframe animations ─────────────────────────────────────────────────── */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(1.05); }
+}
+
+@keyframes slide-in-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes count-up {
+  from { opacity: 0; transform: scale(0.8); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* ── Utility animation classes ──────────────────────────────────────────── */
+.animate-pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+.animate-slide-in-up {
+  animation: slide-in-up 0.4s ease-out;
+}
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out;
+}
+.animate-count-up {
+  animation: count-up 0.6s ease-out;
+}
+.animate-spin-slow {
+  animation: spin-slow 8s linear infinite;
+}
+
+/* ── Scrollbar ───────────────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
 ::-webkit-scrollbar-track { background: hsl(var(--background)); }
 ::-webkit-scrollbar-thumb { background: hsl(var(--muted)); border-radius: 3px; }
 ::-webkit-scrollbar-thumb:hover { background: hsl(var(--muted-foreground)); }
 
-/* Grid pattern for hero */
+/* ── Grid pattern for hero ───────────────────────────────────────────────── */
 .grid-pattern {
   background-image: 
     linear-gradient(hsl(var(--border) / 0.3) 1px, transparent 1px),
     linear-gradient(90deg, hsl(var(--border) / 0.3) 1px, transparent 1px);
   background-size: 60px 60px;
+}
+
+/* ── Custom scrollbar for chat ───────────────────────────────────────────── */
+.custom-scrollbar::-webkit-scrollbar { width: 4px; }
+.custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+.custom-scrollbar::-webkit-scrollbar-thumb { background: hsl(var(--border)); border-radius: 2px; }
+
+/* ── Prose overrides for chatbot markdown ────────────────────────────────── */
+.prose-invert table {
+  border-collapse: collapse;
+  width: 100%;
+}
+.prose-invert th,
+.prose-invert td {
+  border: 1px solid hsl(var(--border));
+  padding: 6px 10px;
+}
+.prose-invert th {
+  background: hsl(var(--secondary));
+}
+.prose-invert blockquote {
+  border-left: 3px solid hsl(var(--primary));
+}
+
+/* ── Card hover lift effect ──────────────────────────────────────────────── */
+.card-hover {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px -8px hsl(var(--primary) / 0.2);
+}
+
+/* ── Neon badge ──────────────────────────────────────────────────────────── */
+.badge-neon {
+  box-shadow: 0 0 8px hsl(var(--primary) / 0.6);
+  border: 1px solid hsl(var(--primary) / 0.5);
+}
+
+/* ── Progress bar animated fill ─────────────────────────────────────────── */
+.progress-fill {
+  transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ── Sidebar active item glow ────────────────────────────────────────────── */
+.sidebar-active-glow {
+  box-shadow: inset 2px 0 0 hsl(var(--primary)),
+              0 0 12px -4px hsl(var(--primary) / 0.3);
 }

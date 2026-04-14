@@ -3,8 +3,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import {
   BarChart3, BookOpen, Bot, Brain, Briefcase, ChevronLeft, ChevronRight,
   Compass, FileText, Flame, Home, LineChart, LogOut, Map, Menu,
-  Sparkles, Target, X, Zap, Users, Shield, Settings, Mic, Calendar,
-  Activity, Bell, Cpu
+  Sparkles, Target, Trophy, X, Zap, Users, Shield, Settings, Mic, Calendar,
+  Activity, Cpu
 } from 'lucide-react';
 import { useAppStore, roleLabels } from '@/lib/store';
 
@@ -25,6 +25,7 @@ const allNavItems = [
   { id: 'speakers', label: 'Speaker Sessions', icon: Mic, roles: ['class10', 'class12', 'college', 'graduate', 'parent'] },
   { id: 'conferences', label: 'Conferences', icon: Calendar, roles: ['class10', 'class12', 'college', 'graduate', 'parent'] },
   { id: 'chatbot', label: 'AI Mentor', icon: Bot, roles: ['class10', 'class12', 'college', 'graduate', 'parent'] },
+  { id: 'achievements', label: 'Achievements', icon: Trophy, roles: ['class10', 'class12', 'college', 'graduate', 'parent'] },
   // Admin pages
   { id: 'admin-home', label: 'Overview', icon: Activity, roles: ['admin'] },
   { id: 'admin-users', label: 'User Management', icon: Users, roles: ['admin'] },

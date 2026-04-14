@@ -13,6 +13,15 @@ interface AuthScreenProps {
   onBack: () => void;
 }
 
+function getPasswordStrength(pw: string): { label: string; color: string; width: string } {
+  if (pw.length === 0) return { label: '', color: '', width: '0%' };
+  const strong = pw.length >= 8 && /[A-Z]/.test(pw) && /[0-9]/.test(pw) && /[^A-Za-z0-9]/.test(pw);
+  const medium = pw.length >= 6 && (/[A-Z]/.test(pw) || /[0-9]/.test(pw));
+  if (strong) return { label: 'Strong', color: 'bg-primary', width: '100%' };
+  if (medium) return { label: 'Medium', color: 'bg-warning', width: '60%' };
+  return { label: 'Weak', color: 'bg-destructive', width: '30%' };
+}
+
 const STUDENT_ROLES: UserRole[] = ['class10', 'class12', 'college', 'graduate'];
 const roleDescriptions: Record<string, string> = {
   class10: 'Discover your ideal stream & explore careers',
@@ -272,7 +281,7 @@ export default function AuthScreen({ onBack }: AuthScreenProps) {
             {mode === 'signup' && step === 'info' && (
               <motion.div key="signup-info" initial={{ opacity: 0, x: 15 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -15 }}>
                 <h2 className="font-display text-2xl font-bold text-foreground mb-1">Create account</h2>
-                <p className="text-sm text-muted-foreground mb-5">Join 10,000+ students on PathFinder AI</p>
+                <p className="text-sm text-muted-foreground mb-5">Join 12,000+ students already on PathFinder AI 🚀</p>
 
                 {error && (
                   <div className="mb-4 p-3 rounded-xl bg-destructive/10 border border-destructive/20 text-destructive text-sm">
@@ -304,6 +313,19 @@ export default function AuthScreen({ onBack }: AuthScreenProps) {
                         {showPw ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
                       </button>
                     </div>
+                    {password && (() => {
+                      const s = getPasswordStrength(password);
+                      return (
+                        <div className="mt-1.5">
+                          <div className="h-1.5 rounded-full bg-secondary overflow-hidden">
+                            <div className={`h-full rounded-full transition-all duration-300 ${s.color}`} style={{ width: s.width }} />
+                          </div>
+                          <p className={`text-xs mt-1 ${s.label === 'Strong' ? 'text-primary' : s.label === 'Medium' ? 'text-warning' : 'text-destructive'}`}>
+                            Password strength: {s.label}
+                          </p>
+                        </div>
+                      );
+                    })()}
                   </div>
                   <div>
                     <Label className="text-xs text-muted-foreground mb-1.5 block uppercase tracking-wide">Confirm Password</Label>

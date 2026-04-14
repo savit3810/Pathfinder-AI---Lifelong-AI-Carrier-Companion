@@ -20,6 +20,7 @@ import AdminDashboard from '@/components/pages/AdminDashboard';
 import SpeakerSessions from '@/components/pages/SpeakerSessions';
 import ConferenceSessions from '@/components/pages/ConferenceSessions';
 import MLIntelligence from '@/components/pages/MLIntelligence';
+import AchievementsPage from '@/components/pages/AchievementsPage';
 
 const Index = () => {
   const { isAuthenticated, user } = useAppStore();
@@ -65,6 +66,7 @@ const Index = () => {
       speakers: <SpeakerSessions />,
       conferences: <ConferenceSessions />,
       chatbot: <ChatbotPage />,
+      achievements: <AchievementsPage />,
     };
 
     return (
@@ -91,6 +93,7 @@ const Index = () => {
     speakers: <SpeakerSessions />,
     conferences: <ConferenceSessions />,
     chatbot: <ChatbotPage />,
+    achievements: <AchievementsPage />,
   };
 
   return (

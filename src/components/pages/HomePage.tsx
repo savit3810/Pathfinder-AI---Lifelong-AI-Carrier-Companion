@@ -1,5 +1,6 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Award, Flame, Target, TrendingUp, Zap, BookOpen, Calendar, ArrowUpRight, Brain, FileText, Bot, Compass, BarChart3, Briefcase } from 'lucide-react';
+import { Award, Bell, Flame, Target, TrendingUp, Zap, BookOpen, Calendar, ArrowUpRight, Brain, FileText, Bot, Compass, BarChart3, Briefcase, CheckCircle2, X } from 'lucide-react';
 import { useAppStore, UserRole } from '@/lib/store';
 import { examDeadlines, careerPaths } from '@/lib/careerData';
 import { AreaChart, Area, ResponsiveContainer, RadarChart, Radar, PolarGrid, PolarAngleAxis, PolarRadiusAxis, BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid } from 'recharts';
@@ -82,6 +83,13 @@ const roleMessages: Record<UserRole, string> = {
 export default function HomePage({ onNavigate }: { onNavigate: (p: string) => void }) {
   const user = useAppStore((s) => s.user);
   const role = user?.role || 'college';
+  const [dismissedBanner, setDismissedBanner] = useState(false);
+
+  // Compute streak from weeklyProgress
+  const streak = Math.min(
+    (user as any)?.weeklyProgress?.length || 1,
+    7
+  );
 
   const statCards = role === 'parent' ? [
     { label: 'Journey Progress', value: '65%', icon: Target, color: 'text-primary' },
@@ -97,15 +105,49 @@ export default function HomePage({ onNavigate }: { onNavigate: (p: string) => vo
 
   return (
     <div className="space-y-6">
+      {/* Notification Banner */}
+      {!dismissedBanner && role !== 'admin' && (
+        <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }}
+          className="flex items-center gap-3 p-4 rounded-xl bg-primary/5 border border-primary/20">
+          <Bell className="w-5 h-5 text-primary shrink-0" />
+          <p className="text-sm text-foreground flex-1">
+            🎯 <strong className="text-primary">New:</strong> Interview Simulator now has 4 round types with live timer & STAR scoring! 
+            <button onClick={() => onNavigate('interview')} className="underline text-primary ml-1 hover:no-underline">Try it →</button>
+          </p>
+          <button onClick={() => setDismissedBanner(true)} className="text-muted-foreground hover:text-foreground shrink-0">
+            <X className="w-4 h-4" />
+          </button>
+        </motion.div>
+      )}
+
       {/* Welcome Banner */}
       <div className="bg-gradient-card rounded-2xl p-8 border border-border relative overflow-hidden">
         <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
         <div className="absolute bottom-0 left-0 w-48 h-48 bg-accent/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
-        <div className="relative z-10">
-          <h1 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-2">
-            Welcome back, <span className="text-gradient-primary">{user?.name}</span> 👋
-          </h1>
-          <p className="text-muted-foreground">{roleMessages[role]}</p>
+        <div className="relative z-10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+          <div>
+            <h1 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-2">
+              Welcome back, <span className="text-gradient-primary">{user?.name}</span> 👋
+            </h1>
+            <p className="text-muted-foreground">{roleMessages[role]}</p>
+          </div>
+          {/* Streak + Level badges */}
+          {role !== 'admin' && role !== 'parent' && (
+            <div className="flex items-center gap-3 shrink-0">
+              <div className="flex flex-col items-center px-4 py-3 rounded-xl bg-warning/10 border border-warning/20">
+                <div className="flex items-center gap-1 mb-0.5">
+                  {Array.from({ length: Math.min(streak, 7) }).map((_, i) => (
+                    <Flame key={i} className={`w-4 h-4 ${i < streak ? 'text-warning' : 'text-muted-foreground'}`} />
+                  ))}
+                </div>
+                <span className="text-xs text-warning font-bold">{streak} Day Streak</span>
+              </div>
+              <div className="flex flex-col items-center px-4 py-3 rounded-xl bg-primary/10 border border-primary/20">
+                <CheckCircle2 className="w-5 h-5 text-primary mb-0.5" />
+                <span className="text-xs text-primary font-bold">{(user?.xp || 0).toLocaleString()} XP</span>
+              </div>
+            </div>
+          )}
         </div>
       </div>
 
